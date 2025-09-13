@@ -77,7 +77,7 @@ export default function AboutPage({ langue }: Props) {
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition">
                     <Database className="w-5 h-5 text-purple-600" />
-                    {langue === "Francais" ? "Base de données & IA" : "Database & AI"}
+                    {langue === "Francais" ? "Base de données" : "Database"}
                 </div>
             </motion.div>
 

@@ -3,7 +3,7 @@
 import { Button } from "./ui/button";
 import { Eye } from "lucide-react";
 import { useState, useRef } from "react";
-
+import { X } from "lucide-react";
 type Project = {
     id: number;
     titre: string;
@@ -73,7 +73,7 @@ export function ProjectDetaille({ projet }: Props) {
                     {/* Bouton fermer */}
                     <div className="modal-action absolute bottom-4 right-4">
                         <label htmlFor={modalId} className="btn cursor-pointer">
-                            Close
+                            <X />
                         </label>
                     </div>
                 </div>

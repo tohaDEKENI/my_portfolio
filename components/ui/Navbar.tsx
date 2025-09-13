@@ -48,7 +48,7 @@ export default function Navbar({ langue, setLangue }: Props) {
                 <div className={`font-bold text-teal-700 dark:text-teal-400 
                 text-sm       /* par défaut petit */
                 md:text-base  /* moyen sur écrans ≥ md */
-                lg:text-lg`}> 
+                lg:text-lg`}>
                     Toha DEKENI <span className={logoDot}>•</span>
                 </div>
 
@@ -59,14 +59,15 @@ export default function Navbar({ langue, setLangue }: Props) {
                         <button
                             key={item.id}
                             onClick={() => handleScroll(item.id)}
-                            className={`relative font-medium dark:text-white ${textMain} ${hoverText} transition-colors ${active === item.id ? textActive : ''}`}
+                            className={`group relative font-medium dark:text-white ${textMain} ${hoverText} transition-colors ${active === item.id ? textActive : ''}`}
                         >
                             {item.label}
                             {active === item.id && (
-                                <span className={`absolute -bottom-1 left-0 w-full h-1 rounded-full ${textActive}`}></span>
+                                <span className={`absolute bottom-0 left-0 w-full h-1 rounded-full ${textActive} bg-current`}></span>
                             )}
                         </button>
                     ))}
+
 
                     <Button
                         variant="ghost"

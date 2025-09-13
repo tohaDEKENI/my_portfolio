@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Award } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { SelectDemo } from "../Language";
 type Props = {
     langue: string
 }
@@ -67,28 +67,25 @@ export default function Featured({ langue }: Props) {
                 </motion.div>
 
                 <motion.p variants={slideUp(0.4)} className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-xl leading-relaxed">
-                    {langue === "Francais" ? "Étudiant en informatique | Développeur Web Full Stack | Passionné par la création de solutions web innovantes, l&apos;optimisation des performances et la résolution de défis techniques | Toujours motivé par l&apos;apprentissage des nouvelles technologies."
+                    {langue === "Francais" ? "Étudiant en informatique | Développeur Web Full Stack | Passionné par la création de solutions web innovantes, l'optimisation des performances et la résolution de défis techniques | Toujours motivé par l'apprentissage des nouvelles technologies."
                         : "Computer Science Student | Full Stack Web Developer | Passionate about building innovative web solutions, optimizing performance, and solving technical challenges | Always motivated by learning new technologies."
                     }
                 </motion.p>
 
                 <motion.div variants={fadeIn(0.6)} className="flex flex-wrap gap-6 mt-4">
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
+                    {/*<Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
                         Hire Me
-                    </Button>
+                    </Button> */}
                     <Button variant="outline" onClick={downloadCV} className="px-6 py-3 text-lg">
                         Download CV
                     </Button>
                 </motion.div>
 
                 <motion.div variants={fadeIn(0.8)} className="flex gap-6 mt-6">
-                    <a href="https://www.credly.com/users/sabyoud-zohair" target="_blank" className="p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-                        <Award className="w-8 h-8 text-gray-800 dark:text-gray-200" />
-                    </a>
                     <a href="https://www.linkedin.com/in/sabyoud-zohair-a5635920a/" target="_blank" className="p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
                         <Linkedin className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                     </a>
-                    <a href="https://github.com/ZouhairSA" target="_blank" className="p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <a href="https://github.com/tohaDEKENI/" target="_blank" className="p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
                         <Github className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                     </a>
                 </motion.div>
@@ -112,8 +109,8 @@ export default function Featured({ langue }: Props) {
             </motion.div>
 
             {/* Scroll Down */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-600 dark:text-gray-300 animate-bounce">
-                <a href="#about" className="flex flex-col items-center gap-2">
+            <div className="hidden  absolute bottom-6 left-1/2 transform -translate-x-1/2 md:flex flex-col items-center text-gray-600 dark:text-gray-300 animate-bounce">
+                <a href="#A propos" className="flex flex-col items-center gap-2">
                     <div className="text-3xl">🖱️</div>
                     <p className="text-base md:text-lg">Scroll Down</p>
                 </a>

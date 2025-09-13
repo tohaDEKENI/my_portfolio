@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Share2 } from "lucide-react";
+import {MapPin, Share2 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { toast } from "react-toastify";
+
+import { Github, Linkedin, Mail, Twitter, Phone } from 'lucide-react'
 
 export default function Contact() {
   const { theme } = useTheme();
@@ -82,7 +84,7 @@ export default function Contact() {
               <Phone />
             </div>
             <h2 className="text-lg font-semibold mt-6">Téléphone</h2>
-            <p className="text-sm text-gray-400">+212 6436 83602</p>
+            <p className="text-sm text-gray-400">+212 724-477160</p>
           </motion.div>
 
           {/* Email */}
@@ -96,7 +98,7 @@ export default function Contact() {
               <Mail />
             </div>
             <h2 className="text-lg font-semibold mt-6">Email</h2>
-            <p className="text-sm text-gray-400">thabelkodjo@gmail.com</p>
+            <p className="text-sm text-gray-400">dekenitoha097@gmail.com</p>
           </motion.div>
 
           {/* Adresse */}
@@ -125,10 +127,9 @@ export default function Contact() {
             </div>
             <h2 className="text-lg font-semibold mt-6">Suivez-moi</h2>
             <div className="flex gap-4 text-xl">
-              <a href="#" className="hover:text-teal-500">🌐</a>
-              <a href="#" className="hover:text-teal-500">🐦</a>
-              <a href="#" className="hover:text-teal-500">💼</a>
-              <a href="#" className="hover:text-teal-500">📷</a>
+              <a href="https://github.com/tohaDEKENI/" target="_blank" className="hover:text-teal-500"><Github /></a>
+              <a href="https://www.linkedin.com/in/toha-dekeni-9b0599356/" target="_blank" className="hover:text-teal-500"><Linkedin /></a>
+              <a href = 'mailto:dekenitoha097@gmail.com' className="hover:text-teal-500"><Mail /></a>
             </div>
           </motion.div>
         </div>

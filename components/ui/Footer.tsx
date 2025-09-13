@@ -17,10 +17,9 @@ export default function Footer() {
   const hoverText = '#ffffff'
 
   const socialLinks = [
-    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/ZouhairSA' },
-    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/sabyoud-zohair-a5635920a/' },
-    { name: 'Email', icon: <Mail className="w-5 h-5" />, href: 'mailto:sabyoudzo@gmail.com' },
-    { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/' },
+    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/tohaDEKENI/'},
+    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/toha-dekeni-9b0599356/'},
+    { name: 'Email', icon: <Mail className="w-5 h-5" />, href: 'mailto:dekenitoha097@gmail.com' },
   ]
 
   const fadeUp = {
@@ -90,7 +89,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="mt-12 text-center text-xs" style={{ color: subTextColor }}>
-        © {currentYear} <span className="font-medium" style={{ color: textColor }}>Toha DEKENI</span>. Tous droits réservés.
+        © {currentYear} <span className="font-medium" style={{ color: textColor }}>Toha DEKENI</span>. Tous droits réservés blanc💙.
       </div>
     </motion.footer>
   )

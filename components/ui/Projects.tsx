@@ -9,70 +9,16 @@ import { ProjectDetaille } from "../ProjectDetaille";
 const projetsWebInitial = [
   {
     id: 1,
-    titre: "Dashboard Administratif",
-    description: "Interface web pour gérer les utilisateurs, les produits et visualiser les statistiques en temps réel.",
-    technologies: ["React", "Chart.js", "Tailwind CSS"],
+    titre: "Quiz Hub – Application de Quiz Interactive",
+    description: "Application web permettant aux utilisateurs de tester leurs connaissances à travers des quiz dynamiques. Authentification, score en temps réel, interface responsive et gestion efficace du parcours utilisateur.",
+    technologies: ["Next.js", "Tailwind CSS", "Lucide-react", "TypeScript", "MySQL", "Shadcn/UI"],
     images: [
       "https://i.postimg.cc/s2yGpkwz/535-ACCA9-17-EE-4-E23-A5-DC-F33-C53-BB3346.png",
-      "https://tse2.mm.bing.net/th/id/OIP.CzVtglCIPAFUNleSbq8AhwHaD1?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      "https://i.postimg.cc/kX7b6YF5/59-CB660-E-871-C-4-B96-A34-B-7-FA42665717-B.png",
+      "https://i.postimg.cc/GhnjMjP0/C3071514-925-F-42-BF-9-A19-8-D2871-C608-D6.png"
     ],
     lienCode: "https://github.com/tohaDEKENI/quiz_hub",
     lienDemo: "https://quiz-hub-xi.vercel.app/quiz"
-  },
-  {
-    id: 2,
-    titre: "Site Portfolio Personnel",
-    description: "Portfolio moderne et responsive pour présenter ses projets, compétences et contact.",
-    technologies: ["React", "Tailwind CSS"],
-    images: [
-      "https://tse2.mm.bing.net/th/id/OIP.CzVtglCIPAFUNleSbq8AhwHaD1?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-    ],
-    lienCode: "#",
-    lienDemo: "#"
-  },
-  {
-    id: 3,
-    titre: "Blog Développeur",
-    description: "Blog personnel pour partager des articles techniques avec un CMS headless.",
-    technologies: ["Next.js", "Markdown", "Tailwind"],
-    images: [
-      "https://i-aseman.ir/blog/wp-content/uploads/2023/12/PicsArt_11-28-09.13.31-1.webp"
-    ],
-    lienCode: "#",
-    lienDemo: "#"
-  },
-  {
-    id: 4,
-    titre: "Plateforme E-commerce",
-    description: "Site e-commerce avec panier, paiement Stripe et espace admin.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    images: [
-      "https://www.shutterstock.com/shutterstock/videos/1099379587/thumb/11.jpg?ip=x480"
-    ],
-    lienCode: "#",
-    lienDemo: "#"
-  },
-  {
-    id: 5,
-    titre: "Application de Chat",
-    description: "App de messagerie en temps réel avec authentification et sockets.",
-    technologies: ["Vue.js", "Socket.io", "Express"],
-    images: [
-      "https://www.que.es/wp-content/uploads/2020/11/Payload-1.jpg"
-    ],
-    lienCode: "#",
-    lienDemo: "#"
-  },
-  {
-    id: 6,
-    titre: "Générateur de CV en Ligne",
-    description: "App web pour créer un CV professionnel téléchargeable en PDF.",
-    technologies: ["React", "Tailwind", "html2pdf.js"],
-    images: [
-      "https://tse1.mm.bing.net/th/id/OIP.Lslf1gCruk6Yjgi3nVeHKgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-    ],
-    lienCode: "#",
-    lienDemo: "#"
   }
 ];
 
@@ -189,8 +135,8 @@ export default function ProjectsSection() {
                 )}
 
                 {/* Nouveau bouton "Voir plus" avec icône */}
-                
-                <ProjectDetaille projet={projet}/>
+
+                <ProjectDetaille projet={projet} />
               </div>
             </div>
           </div>

@@ -20,11 +20,8 @@ const skillsData = {
   ],
   Database: [
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg", nom: "MySQL" },
-    { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg", nom: "MariaDB" },
-    { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg", nom: "SQLite" },
   ],
   Tools: [
-    { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg", nom: "GitHub" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", nom: "Git" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg", nom: "VSCode" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/insomnia/insomnia-original.svg", nom: "Insomnia" },

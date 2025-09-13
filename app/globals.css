@@ -142,3 +142,7 @@
     border-radius: 45% 55% 45% 55%;
   }
 }
+
+html{
+  scroll-behavior: smooth;
+}
