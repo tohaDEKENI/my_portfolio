@@ -14,7 +14,7 @@ export default function Home() {
   const [langue, setLangue] = useState<string>("Anglais")
 
   return (
-    <div>
+    <div  className="w-full overflow-x-hidden">
       <Navbar langue={langue} setLangue={setLangue} />
       <Featured langue={langue} />
       <AboutPro langue={langue} />

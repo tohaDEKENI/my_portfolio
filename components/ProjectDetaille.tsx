@@ -33,7 +33,7 @@ export function ProjectDetaille({ projet }: Props) {
     const modalId = `modal_project_${projet.id}`;
 
     return (
-        <div>
+        <div className="hidden sm:block">
             {/* Bouton pour ouvrir le modal */}
             <label htmlFor={modalId} className="btn flex items-center gap-1 cursor-pointer">
                 Voir plus <Eye className="w-4 h-4" />
