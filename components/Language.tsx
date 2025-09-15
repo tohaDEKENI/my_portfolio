@@ -13,24 +13,29 @@ import {
 } from "@/components/ui/select"
 
 type Props = {
-    langue:string,
-    setLangue:React.Dispatch<SetStateAction<string>>
+    langue: string,
+    setLangue: React.Dispatch<SetStateAction<string>>
 }
 
-export function SelectDemo({ langue,setLangue }: Props) {
+export function SelectDemo({ langue, setLangue }: Props) {
 
     return (
-        <Select onValueChange={(value:string)=>{
+        <Select onValueChange={(value: string) => {
             setLangue(value)
         }}>
-            <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Chnage la langue" />
+            <SelectTrigger className="w-28">
+                <SelectValue
+
+                    placeholder={langue === "Anglais" ? "language" : "langue"}
+                />
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>
-                    <SelectLabel>Fruits</SelectLabel>
+                    <SelectLabel>
+                        {langue === "Anglais" ? "Language" : "Langue"}
+                    </SelectLabel>
                     <SelectItem value="Anglais">Anglais</SelectItem>
-                    <SelectItem value="Francais">Francais</SelectItem>
+                    <SelectItem value="Francais">Français</SelectItem>
                 </SelectGroup>
             </SelectContent>
         </Select>

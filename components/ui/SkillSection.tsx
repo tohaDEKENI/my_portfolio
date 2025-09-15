@@ -28,23 +28,27 @@ const skillsData = {
   ],
 };
 
-export default function SkillsSection() {
+type Props = {
+  langue: string
+}
+
+export default function SkillsSection({ langue }: Props) {
   const { theme } = useTheme();
 
   const container: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
 
-const items: Variants = {
-  hidden: { opacity: 0, y: 20, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
+  const items: Variants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+  };
 
 
   const categoryColors: Record<string, { light: string; dark: string }> = {
@@ -64,7 +68,10 @@ const items: Variants = {
         className="text-4xl md:text-5xl font-bold mb-12"
         style={{ color: theme === "light" ? "#14b8a6" : "#5eead4" }}
       >
-        Mes Compétences
+        <h2>
+          {langue === "Anglais" ? "My Skills" : "Mes Compétences"}
+        </h2>
+
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-7xl">

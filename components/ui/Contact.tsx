@@ -4,40 +4,42 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import {MapPin, Share2 } from "lucide-react";
+import { MapPin, Share2, Phone, Mail, Github, Linkedin, Loader2Icon } from 'lucide-react'
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-import { Github, Linkedin, Mail, Twitter, Phone } from 'lucide-react'
+type Props = {
+  langue: string
+}
 
-export default function Contact() {
+export default function Contact({ langue }: Props) {
   const { theme } = useTheme();
   const [name, setName] = useState<string>("")
   const [lastName, setLastname] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [message, setMessage] = useState<string>("")
-  const [loading,setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false)
 
-  async function handleSubmit(e:React.ChangeEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch("/api",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({name,lastName,email,message})
+      const res = await fetch("/api", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, lastName, email, message })
       });
       const data = await res.json();
-      if (res.ok) {
-        toast(data.message)
-      } else {
-        toast(data.message)
-      }
+      toast(data.message);
     } catch (error) {
-
-    }finally{
-      setLoading(false)
+      toast(langue === "Anglais" ? "An error occurred!" : "Une erreur est survenue !");
+    } finally {
+      setLoading(false);
+      setLastname("");
+      setEmail("");
+      setMessage("");
+      setName("");
     }
   }
 
@@ -62,10 +64,12 @@ export default function Contact() {
         className="text-center"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: "#14b8a6" }}>
-          Contactez-moi
+          {langue === "Anglais" ? "Contact Me" : "Contactez-moi"}
         </h1>
         <p className="text-lg" style={{ color: subTextColor }}>
-          Une idée ? Transformons-la en réalité ensemble !
+          {langue === "Anglais"
+            ? "Got an idea? Let's turn it into reality together!"
+            : "Une idée ? Transformons-la en réalité ensemble !"}
         </p>
       </motion.div>
 
@@ -83,7 +87,9 @@ export default function Contact() {
             <div className="w-12 h-12 flex items-center justify-center rounded-full bg-teal-500 text-white absolute -top-6">
               <Phone />
             </div>
-            <h2 className="text-lg font-semibold mt-6">Téléphone</h2>
+            <h2 className="text-lg font-semibold mt-6">
+              {langue === "Anglais" ? "Phone" : "Téléphone"}
+            </h2>
             <p className="text-sm text-gray-400">+212 724-477160</p>
           </motion.div>
 
@@ -111,7 +117,9 @@ export default function Contact() {
             <div className="w-12 h-12 flex items-center justify-center rounded-full bg-teal-500 text-white absolute -top-6">
               <MapPin />
             </div>
-            <h2 className="text-lg font-semibold mt-6">Adresse</h2>
+            <h2 className="text-lg font-semibold mt-6">
+              {langue === "Anglais" ? "Address" : "Adresse"}
+            </h2>
             <p className="text-sm text-gray-400">Casablanca, Maroc</p>
           </motion.div>
 
@@ -125,11 +133,13 @@ export default function Contact() {
             <div className="w-12 h-12 flex items-center justify-center rounded-full bg-teal-500 text-white absolute -top-6">
               <Share2 />
             </div>
-            <h2 className="text-lg font-semibold mt-6">Suivez-moi</h2>
+            <h2 className="text-lg font-semibold mt-6">
+              {langue === "Anglais" ? "Follow me" : "Suivez-moi"}
+            </h2>
             <div className="flex gap-4 text-xl">
               <a href="https://github.com/tohaDEKENI/" target="_blank" className="hover:text-teal-500"><Github /></a>
               <a href="https://www.linkedin.com/in/toha-dekeni-9b0599356/" target="_blank" className="hover:text-teal-500"><Linkedin /></a>
-              <a href = 'mailto:dekenitoha097@gmail.com' className="hover:text-teal-500"><Mail /></a>
+              <a href='mailto:dekenitoha097@gmail.com' className="hover:text-teal-500"><Mail /></a>
             </div>
           </motion.div>
         </div>
@@ -144,30 +154,32 @@ export default function Contact() {
           onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Input placeholder="Prénom"
+            <Input
+              placeholder={langue === "Anglais" ? "First Name" : "Prénom"}
               required
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setLastname(e.target.value)
-              }}
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             />
-            <Input placeholder="Nom"
+            <Input
+              placeholder={langue === "Anglais" ? "Last Name" : "Nom"}
               required
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setName(e.target.value)
-              }}
+              value={lastName}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLastname(e.target.value) }
             />
           </div>
-          <Input placeholder="Adresse e-mail" type="email"
+          <Input
+            placeholder={langue === "Anglais" ? "Email Address" : "Adresse e-mail"}
+            type="email"
             required
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setEmail(e.target.value)
-            }}
+            value={email}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
           />
-          <Textarea placeholder="Message" rows={5}
+          <Textarea
+            placeholder={langue === "Anglais" ? "Message" : "Message"}
+            rows={5}
             required
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
-              setMessage(e.target.value)
-            }}
+            value={message}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
           />
           <Button
             type="submit"
@@ -176,8 +188,16 @@ export default function Contact() {
               backgroundColor: "#14b8a6",
               color: "#ffffff"
             }}
+            disabled={loading}
           >
-            {loading ? "Envoie..." : "Envoyer"}
+            {loading ? (
+              <>
+                <Loader2Icon className="animate-spin w-5 h-5" />
+                {langue === "Anglais" ? "Sending..." : "Envoi..."}
+              </>
+            ) : (
+              langue === "Anglais" ? "Send" : "Envoyer"
+            )}
           </Button>
         </motion.form>
       </div>

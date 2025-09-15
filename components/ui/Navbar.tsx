@@ -19,12 +19,13 @@ export default function Navbar({ langue, setLangue }: Props) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const menuItems = [
-        { id: 'domicile', label: 'Domicile' },
-        { id: "A propos", label: "A propos" },
-        { id: 'Competence', label: 'Competence' },
-        { id: 'projets', label: 'Projets' },
-        { id: 'contact', label: 'Contact' },
+        { id: 'domicile', label: 'Domicile', anglais: 'Home' },
+        { id: 'A propos', label: 'A propos', anglais: 'About' },
+        { id: 'Competence', label: 'Compétences', anglais: 'Skills' },
+        { id: 'projets', label: 'Projets', anglais: 'Projects' },
+        { id: 'contact', label: 'Contact', anglais: 'Contact' },
     ];
+
 
     const handleScroll = (id: string) => {
         setActive(id);
@@ -61,7 +62,7 @@ export default function Navbar({ langue, setLangue }: Props) {
                             onClick={() => handleScroll(item.id)}
                             className={`group relative font-medium dark:text-white ${textMain} ${hoverText} transition-colors ${active === item.id ? textActive : ''}`}
                         >
-                            {item.label}
+                            {langue === "Anglais" ? item.anglais : item.label}
                             {active === item.id && (
                                 <span className={`absolute bottom-0 left-0 w-full h-1 rounded-full ${textActive} bg-current`}></span>
                             )}
@@ -78,7 +79,9 @@ export default function Navbar({ langue, setLangue }: Props) {
                     </Button>
 
                     <Link href="/cv.pdf" target="_blank">
-                        <Button variant="outline">Télécharger le CV</Button>
+                        <Button variant="outline">
+                            {langue === "Anglais" ? "Download my CV" : "Télécharger mon CV"}
+                        </Button>
                     </Link>
                     <SelectDemo langue={langue} setLangue={setLangue} />
                 </nav>
@@ -108,7 +111,7 @@ export default function Navbar({ langue, setLangue }: Props) {
                             onClick={() => handleScroll(item.id)}
                             className={`block w-full text-left font-medium ${textMain} py-2 transition-colors ${active === item.id ? textActive : hoverText}`}
                         >
-                            {item.label}
+                            {langue === "Anglais" ? item.anglais : item.label}
                         </button>
                     ))}
 

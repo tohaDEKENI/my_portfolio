@@ -14,14 +14,14 @@ export default function Home() {
   const [langue, setLangue] = useState<string>("Anglais")
 
   return (
-    <div  className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <Navbar langue={langue} setLangue={setLangue} />
       <Featured langue={langue} />
       <AboutPro langue={langue} />
-      <SkillsSection />
-      <ProjectsSection />
-      <Contact />
-      <Footer />
+      <SkillsSection langue={langue} />
+      <ProjectsSection langue={langue} />
+      <Contact langue={langue} />
+      <Footer langue={langue} />
       <ToastContainer />
     </div>
   );

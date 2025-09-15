@@ -22,8 +22,11 @@ const projetsWebInitial = [
   }
 ];
 
+type Props = {
+  langue: string
+}
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ langue }: Props) {
   const { theme } = useTheme();
   const [projetsWeb, setProjetsWeb] = useState(
     projetsWebInitial.map(p => ({ ...p, currentSlide: 0 }))
@@ -42,7 +45,7 @@ export default function ProjectsSection() {
       style={{ backgroundColor: bgColor }}
     >
       <h2 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: "#14b8a6" }}>
-        Mes Projets
+        {langue === "Anglais" ? "My Projects" : "Mes Projets"}
       </h2>
 
       <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
