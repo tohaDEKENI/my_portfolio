@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Code, Server, Database } from "lucide-react";
+import { Code, Server, Database, BookOpen, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
 type Props = {
-    langue: string
-}
+    langue: string;
+};
 
 export default function AboutPage({ langue }: Props) {
     const downloadCV = () => {
@@ -47,16 +47,22 @@ export default function AboutPage({ langue }: Props) {
                 custom={1}
                 className="text-2xl md:text-3xl font-semibold"
             >
-                Full Stack Web Developer
+                {langue === "Francais"
+                    ? "Étudiant en informatique & passionné de développement"
+                    : "Computer Science Student & Development Enthusiast"}
             </motion.h2>
 
             <motion.p
-                className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-xl leading-relaxed"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                custom={2}
+                className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed"
             >
                 {langue === "Francais"
-                    ? "Développeur Web Full Stack | Création de solutions web performantes et sécurisées | Optimisation des performances et expérience utilisateur | Expertise en frontend, backend et bases de données"
-                    : "Full Stack Web Developer | Building secure and high-performance web solutions | Performance optimization and user experience | Expertise in frontend, backend and databases"
-                }
+                    ? "Passionné par le développement web et les technologies, je conçois et développe des applications modernes en utilisant les outils du frontend et du backend. Je continue à élargir mes compétences chaque jour à travers des projets concrets et des expérimentations personnelles. Curieux et motivé, je recherche des opportunités pour mettre en pratique mes connaissances, apprendre encore plus et contribuer à des projets réels."
+                    : "Passionate about web development and technology, I design and build modern applications using both frontend and backend tools. I constantly expand my skills through real projects and personal experiments. Curious and motivated, I am looking for opportunities to apply my knowledge, learn even more, and contribute to real projects."}
             </motion.p>
 
             <motion.div
@@ -77,7 +83,15 @@ export default function AboutPage({ langue }: Props) {
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition">
                     <Database className="w-5 h-5 text-purple-600" />
-                    {langue === "Francais" ? "Base de données" : "Database"}
+                    {langue === "Francais" ? "Bases de données" : "Databases"}
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition">
+                    <BookOpen className="w-5 h-5 text-purple-600" />
+                    {langue === "Francais" ? "Apprentissage continu" : "Continuous Learning"}
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition">
+                    <Rocket className="w-5 h-5 text-purple-600" />
+                    {langue === "Francais" ? "Projets personnels" : "Personal Projects"}
                 </div>
             </motion.div>
 
@@ -88,11 +102,14 @@ export default function AboutPage({ langue }: Props) {
                 viewport={{ once: false, amount: 0.5 }}
                 custom={4}
             >
-                <Button variant="outline" onClick={downloadCV} className="px-8 py-4 text-lg mt-8">
-                    {langue === "Francais" ? "Télécharger le CV" : "Download CV"}
+                <Button
+                    variant="outline"
+                    onClick={downloadCV}
+                    className="px-8 py-4 text-lg mt-8"
+                >
+                    {langue === "Francais" ? "Télécharger mon CV" : "Download my CV"}
                 </Button>
             </motion.div>
-
         </section>
     );
 }

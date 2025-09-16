@@ -25,7 +25,7 @@ export default function ParticlesBackgroundPoint() {
           number: { value: 80, density: { enable: true,} }, // nombre de points
           color: { value: "#38bdf8" }, // couleur des points
           shape: { type: "circle" }, // forme = cercle
-          opacity: { value: 0.7 },
+          opacity: { value: 0.2 },
           size: { value: { min: 1, max: 4 } }, // taille aléatoire
           move: {
             enable: true,

@@ -25,7 +25,7 @@ export default function ParticlesBackground() {
           number: { value: 60, density: { enable: true} },
           color: { value: "#38bdf8" },
           shape: { type: "circle" },
-          opacity: { value: 0.5 },
+          opacity: { value: 0.2 },
           size: { value: { min: 1, max: 4 } },
           move: { enable: true, speed: 1, direction: "none", outModes: "out" },
           links: { enable: true, distance: 150, color: "#38bdf8", opacity: 0.4, width: 1 }, // ajoute les lignes

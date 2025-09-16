@@ -18,7 +18,7 @@ const projetsWebInitial = [
       "https://i.postimg.cc/GhnjMjP0/C3071514-925-F-42-BF-9-A19-8-D2871-C608-D6.png"
     ],
     lienCode: "https://github.com/tohaDEKENI/quiz_hub",
-    lienDemo: "https://quiz-hub-xi.vercel.app/quiz"
+    lienDemo: "https://quiz-hub-xq76.vercel.app/"
   }
 ];
 

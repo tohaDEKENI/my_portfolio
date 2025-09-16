@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Variants } from "framer-motion";
 
-
 const skillsData = {
   Frontend: [
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", nom: "React" },
@@ -17,7 +16,7 @@ const skillsData = {
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg", nom: "Express" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg", nom: "Flask" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", nom: "Next.js" },
-    {image:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg ",nom:"Python"}
+    { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", nom: "Python" }
   ],
   Database: [
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg", nom: "MySQL" },
@@ -42,21 +41,12 @@ export default function SkillsSection({ langue }: Props) {
   };
 
   const items: Variants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
-      y: 0,
-      scale: 1,
+      x: 0,
       transition: { duration: 0.4, ease: "easeOut" },
     },
-  };
-
-
-  const categoryColors: Record<string, { light: string; dark: string }> = {
-    Frontend: { light: "bg-teal-50", dark: "bg-teal-900/30" },
-    Backend: { light: "bg-purple-50", dark: "bg-purple-900/30" },
-    Database: { light: "bg-yellow-50", dark: "bg-yellow-900/30" },
-    Tools: { light: "bg-pink-50", dark: "bg-pink-900/30" },
   };
 
   return (
@@ -69,13 +59,10 @@ export default function SkillsSection({ langue }: Props) {
         className="text-4xl md:text-5xl font-bold mb-12"
         style={{ color: theme === "light" ? "#14b8a6" : "#5eead4" }}
       >
-        <h2>
-          {langue === "Anglais" ? "My Skills" : "Mes Compétences"}
-        </h2>
-
+        {langue === "Anglais" ? "My Skills" : "Mes Compétences"}
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-7xl z-40">
+      <div className="flex flex-col gap-12 w-full max-w-5xl">
         {Object.entries(skillsData).map(([category, skills]) => (
           <motion.div
             key={category}
@@ -83,31 +70,26 @@ export default function SkillsSection({ langue }: Props) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-            className={`p-6 rounded-2xl shadow-xl`}
-            style={{
-              backgroundColor: theme === "light" ? categoryColors[category].light : categoryColors[category].dark
-            }}
+            className="flex flex-col gap-4"
           >
             <h3
-              className="text-2xl md:text-3xl font-semibold mb-6"
+              className="text-2xl md:text-3xl font-semibold"
               style={{ color: theme === "light" ? "#1f2937" : "#f9fafb" }}
             >
               {category}
             </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 z-40">
+            <div className="flex flex-wrap gap-6">
               {skills.map((skill) => (
                 <motion.div
                   key={skill.nom}
                   variants={items}
-                  className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl shadow-md hover:scale-105 hover:shadow-xl transition-transform cursor-pointer z-40"
+                  className="flex items-center gap-3 px-4 py-2 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-transform cursor-pointer"
                   style={{ backgroundColor: theme === "light" ? "#ffffff" : "#1f2937" }}
                 >
-                  <div className="w-16 h-16 flex items-center justify-center">
-                    <img src={skill.image} alt={skill.nom} className="w-full h-full object-contain" />
-                  </div>
+                  <img src={skill.image} alt={skill.nom} className="w-8 h-8 object-contain" />
                   <span
-                    className="font-medium text-sm md:text-base text-center"
+                    className="font-medium text-sm md:text-base"
                     style={{ color: theme === "light" ? "#1f2937" : "#f9fafb" }}
                   >
                     {skill.nom}

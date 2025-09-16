@@ -1,13 +1,50 @@
 'use client';
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Award } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-import { SelectDemo } from "../Language";
 
 type Props = {
     langue: string
+};
+
+// Hook machine à écrire avec répétition
+function useTypewriter(words: string[], speed = 100, pause = 1500) {
+    const [index, setIndex] = useState(0); // index du mot
+    const [subIndex, setSubIndex] = useState(0); // index de la lettre
+    const [forward, setForward] = useState(true); // écrire ou effacer
+    const [displayed, setDisplayed] = useState("");
+
+    useEffect(() => {
+        if (index >= words.length) {
+            setIndex(0); // recommencer
+            return;
+        }
+
+        if (forward) {
+            if (subIndex < words[index].length) {
+                setTimeout(() => {
+                    setSubIndex(subIndex + 1);
+                    setDisplayed(words[index].slice(0, subIndex + 1));
+                }, speed);
+            } else {
+                setTimeout(() => setForward(false), pause); // pause avant effacement
+            }
+        } else {
+            if (subIndex > 0) {
+                setTimeout(() => {
+                    setSubIndex(subIndex - 1);
+                    setDisplayed(words[index].slice(0, subIndex - 1));
+                }, speed / 2);
+            } else {
+                setForward(true);
+                setIndex(index + 1);
+            }
+        }
+    }, [subIndex, index, forward, words, speed, pause]);
+
+    return displayed;
 }
 
 export default function Featured({ langue }: Props) {
@@ -36,6 +73,13 @@ export default function Featured({ langue }: Props) {
         visible: { opacity: 1, scale: 1, transition: { duration: 0.8, delay } },
     });
 
+    // Liste des textes
+    const words = langue === "Francais"
+        ? ["Développeur Web", "Étudiant en Informatique", "Passionné de Tech"]
+        : ["Web Developer", "Computer Science Student", "Tech Enthusiast"];
+
+    const typewriterText = useTypewriter(words, 100, 1200);
+
     return (
         <section
             id="domicile"
@@ -56,15 +100,9 @@ export default function Featured({ langue }: Props) {
                     variants={slideUp(0.2)}
                     className="text-2xl md:text-3xl font-semibold"
                 >
-                    {langue === "Francais" ? (
-                        <>
-                            Je suis <span className="text-purple-600">Développeur Web</span>
-                        </>
-                    ) : (
-                        <>
-                            I&apos;m <span className="text-purple-600">Web Developer</span>
-                        </>
-                    )}
+                    {langue === "Francais" ? "Je suis " : "I'm "}
+                    <span className="text-purple-600">{typewriterText}</span>
+                    <span className="animate-pulse">|</span>
                 </motion.div>
 
                 <motion.p variants={slideUp(0.4)} className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-xl leading-relaxed">
@@ -74,9 +112,6 @@ export default function Featured({ langue }: Props) {
                 </motion.p>
 
                 <motion.div variants={fadeIn(0.6)} className="flex flex-wrap gap-6 mt-4">
-                    {/*<Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
-                        Hire Me
-                    </Button> */}
                     <Button variant="outline" onClick={downloadCV} className="px-6 py-3 text-lg">
                         Download CV
                     </Button>
