@@ -42,9 +42,10 @@ export default function Contact({ langue }: Props) {
       setName("");
     }
   }
+  
 
   // Couleurs dynamiques
-  const bgColor = theme === "light" ? "#f9fafb" : "#111827";
+  const bgColor = theme === "light" ? "#f9fafb" :  "#020b1dff" ;
   const cardColor = theme === "light" ? "#ffffff" : "#1f2937";
   const textColor = theme === "light" ? "#1f2937" : "#f9fafb";
   const subTextColor = theme === "light" ? "#4b5563" : "#d1d5db";
@@ -53,7 +54,7 @@ export default function Contact({ langue }: Props) {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-20 gap-12"
+      className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-20 gap-12 z-40"
       style={{ backgroundColor: bgColor, color: textColor }}
     >
       {/* Titre */}
@@ -149,7 +150,7 @@ export default function Contact({ langue }: Props) {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl shadow-xl p-8 flex flex-col gap-6"
+          className="rounded-2xl shadow-xl p-8 flex flex-col gap-6 z-40"
           style={{ backgroundColor: cardColor, color: textColor }}
           onSubmit={handleSubmit}
         >

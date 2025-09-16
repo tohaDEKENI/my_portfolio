@@ -16,7 +16,8 @@ const skillsData = {
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg", nom: "Node.js" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg", nom: "Express" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg", nom: "Flask" },
-    { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", nom: "Next.js" }
+    { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", nom: "Next.js" },
+    {image:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg ",nom:"Python"}
   ],
   Database: [
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg", nom: "MySQL" },
@@ -61,8 +62,8 @@ export default function SkillsSection({ langue }: Props) {
   return (
     <section
       id="Competence"
-      className="flex flex-col items-center justify-center min-h-screen px-6 md:px-12 py-20 gap-16"
-      style={{ backgroundColor: theme === "light" ? "#f9fafb" : "#111827" }}
+      className="flex flex-col items-center justify-center min-h-screen px-6 md:px-12 py-20 gap-16 z-40"
+      style={{ backgroundColor: theme === "light" ? "#f9fafb" : "#020b1dff" }}
     >
       <h2
         className="text-4xl md:text-5xl font-bold mb-12"
@@ -74,7 +75,7 @@ export default function SkillsSection({ langue }: Props) {
 
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-7xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-7xl z-40">
         {Object.entries(skillsData).map(([category, skills]) => (
           <motion.div
             key={category}
@@ -94,12 +95,12 @@ export default function SkillsSection({ langue }: Props) {
               {category}
             </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 z-40">
               {skills.map((skill) => (
                 <motion.div
                   key={skill.nom}
                   variants={items}
-                  className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl shadow-md hover:scale-105 hover:shadow-xl transition-transform cursor-pointer"
+                  className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl shadow-md hover:scale-105 hover:shadow-xl transition-transform cursor-pointer z-40"
                   style={{ backgroundColor: theme === "light" ? "#ffffff" : "#1f2937" }}
                 >
                   <div className="w-16 h-16 flex items-center justify-center">

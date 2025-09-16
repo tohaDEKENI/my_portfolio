@@ -33,17 +33,17 @@ export default function Footer({ langue }: Props) {
 
   return (
     <motion.footer
-      className="py-14 mt-24"
+      className="py-14 mt-24 z-50"
       style={{ color: textColor, borderTop: `1px solid ${borderColor}` }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={fadeUp}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-3 gap-10 z-50">
 
         {/* Bloc contact / À propos */}
-        <div className="space-y-4">
+        <div className="space-y-4 z-50">
           <h2 className="text-lg font-semibold" style={{ color: textColor }}>
             {langue === "Anglais" ? "About" : "À propos"}
           </h2>
@@ -63,7 +63,7 @@ export default function Footer({ langue }: Props) {
         </div>
 
         {/* Bloc navigation rapide */}
-        <div className="space-y-4">
+        <div className="space-y-4 z-50">
           <h2 className="text-lg font-semibold" style={{ color: textColor }}>
             {langue === "Anglais" ? "Quick Navigation" : "Navigation"}
           </h2>
@@ -92,7 +92,7 @@ export default function Footer({ langue }: Props) {
         </div>
 
         {/* Bloc réseaux sociaux */}
-        <div className="space-y-4">
+        <div className="space-y-4 z-50">
           <h2 className="text-lg font-semibold" style={{ color: textColor }}>
             {langue === "Anglais" ? "Social Networks" : "Réseaux sociaux"}
           </h2>
@@ -117,7 +117,7 @@ export default function Footer({ langue }: Props) {
       </div>
 
       {/* Copyright */}
-      <div className="mt-12 text-center text-xs" style={{ color: subTextColor }}>
+      <div className="mt-12 text-center text-xs z-50" style={{ color: subTextColor }}>
         © {currentYear} <span className="font-medium" style={{ color: textColor }}>Toha DEKENI</span>.{" "}
         {langue === "Anglais" ? "All rights reserved." : "Tous droits réservés"} 💙.
       </div>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { SelectDemo } from "../Language";
+
 type Props = {
     langue: string
 }

@@ -41,18 +41,18 @@ export default function ProjectsSection({ langue }: Props) {
   return (
     <section
       id="projets"
-      className="flex flex-col items-center w-full justify-center min-h-screen px-6 md:px-12 py-20 gap-12"
+      className="flex flex-col items-center w-full justify-center min-h-screen px-6 md:px-12 py-20 gap-12 z-50"
       style={{ backgroundColor: bgColor }}
     >
       <h2 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: "#14b8a6" }}>
         {langue === "Anglais" ? "My Projects" : "Mes Projets"}
       </h2>
 
-      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 z-40">
         {projetsWeb.map((projet, idx) => (
           <div
             key={projet.id}
-            className="flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+            className="flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer z-50"
             style={{ backgroundColor: cardColor }}
           >
             {/* Carousel */}
@@ -63,7 +63,7 @@ export default function ProjectsSection({ langue }: Props) {
               />
 
               {projet.images.length > 1 && (
-                <div className="absolute left-2 right-2 top-1/2 flex justify-between -translate-y-1/2">
+                <div className="absolute left-2 right-2 top-1/2 flex justify-between -translate-y-1/2 z-50">
                   <button
                     className="btn btn-circle"
                     onClick={() =>
