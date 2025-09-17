@@ -83,11 +83,7 @@ export default function Footer({ langue }: Props) {
                 {langue === "Anglais" ? "Contact" : "Contact"}
               </a>
             </li>
-            <li>
-              <a href="/cv.pdf" style={{ color: subTextColor }} className="hover:underline">
-                {langue === "Anglais" ? "Download CV" : "Télécharger CV"}
-              </a>
-            </li>
+            
           </ul>
         </div>
 

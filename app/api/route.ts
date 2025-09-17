@@ -42,3 +42,18 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: "Erreur lors de l'envoi de l'email" }, { status: 500 })
     }
 }
+
+import path from "path";
+import fs from "fs";
+
+export async function GET() {
+  const filePath = path.join(process.cwd(), "public", "my_cv.pdf");
+  const fileBuffer = fs.readFileSync(filePath);
+
+  return new NextResponse(fileBuffer, {
+    headers: {
+      "Content-Type": "application/pdf",
+      "Content-Disposition": 'attachment; filename="Mon_CV_Toha.pdf"',
+    },
+  });
+}

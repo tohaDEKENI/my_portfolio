@@ -6,6 +6,7 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { SelectDemo } from "../Language";
 import Link from "next/link";
+import CVDownloader from "../CVDownloader";
 
 
 type Props = {
@@ -78,11 +79,7 @@ export default function Navbar({ langue, setLangue }: Props) {
                         {theme === 'light' ? <Moon /> : <Sun />}
                     </Button>
 
-                    <Link href="/cv.pdf" target="_blank">
-                        <Button variant="outline">
-                            {langue === "Anglais" ? "Download my CV" : "Télécharger mon CV"}
-                        </Button>
-                    </Link>
+                    <CVDownloader langue={langue}/>
                     <SelectDemo langue={langue} setLangue={setLangue} />
                 </nav>
 
@@ -114,11 +111,7 @@ export default function Navbar({ langue, setLangue }: Props) {
                             {langue === "Anglais" ? item.anglais : item.label}
                         </button>
                     ))}
-
-                    <Link href="/cv.pdf" target="_blank">
-                        <Button className="w-full" variant="outline">Télécharger le CV</Button>
-                    </Link>
-
+                    <CVDownloader langue={langue}/>
                 </div>
             )}
         </header>

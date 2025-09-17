@@ -6,11 +6,14 @@ import { Github, ExternalLink, Eye } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "./button";
 import { ProjectDetaille } from "../ProjectDetaille";
+
 const projetsWebInitial = [
   {
     id: 1,
     titre: "Quiz Hub – Application de Quiz Interactive",
+    titreEN: "Quiz Hub – Interactive Quiz Application",
     description: "Application web permettant aux utilisateurs de tester leurs connaissances à travers des quiz dynamiques. Authentification, score en temps réel, interface responsive et gestion efficace du parcours utilisateur.",
+    descriptionEN: "Web application allowing users to test their knowledge through dynamic quizzes. Features include authentication, real-time scoring, responsive interface, and efficient user journey management.",
     technologies: ["Next.js", "Tailwind CSS", "Lucide-react", "TypeScript", "MySQL", "Shadcn/UI"],
     images: [
       "https://i.postimg.cc/s2yGpkwz/535-ACCA9-17-EE-4-E23-A5-DC-F33-C53-BB3346.png",
@@ -21,6 +24,7 @@ const projetsWebInitial = [
     lienDemo: "https://quiz-hub-xq76.vercel.app/"
   }
 ];
+
 
 type Props = {
   langue: string
@@ -99,10 +103,10 @@ export default function ProjectsSection({ langue }: Props) {
             {/* Contenu projet */}
             <div className="p-4 flex flex-col gap-2">
               <h3 className="text-xl font-semibold" style={{ color: textColor }}>
-                {projet.titre}
+                {langue === "Anglais" ? projet.titreEN : projet.titre}
               </h3>
               <p className="text-sm" style={{ color: textColor }}>
-                {projet.description}
+                {langue === "Anglais" ? projet.descriptionEN : projet.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {projet.technologies.map(tech => (

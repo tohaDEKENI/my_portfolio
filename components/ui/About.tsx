@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Code, Server, Database, BookOpen, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
+import CVDownloader from "../CVDownloader";
 
 type Props = {
     langue: string;
@@ -102,13 +103,7 @@ export default function AboutPage({ langue }: Props) {
                 viewport={{ once: false, amount: 0.5 }}
                 custom={4}
             >
-                <Button
-                    variant="outline"
-                    onClick={downloadCV}
-                    className="px-8 py-4 text-lg mt-8"
-                >
-                    {langue === "Francais" ? "Télécharger mon CV" : "Download my CV"}
-                </Button>
+                <CVDownloader langue={langue}/>
             </motion.div>
         </section>
     );
