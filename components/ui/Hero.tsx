@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import CVDownloader from "../CVDownloader";
@@ -113,7 +112,7 @@ export default function Featured({ langue }: Props) {
                 </motion.p>
 
                 <motion.div variants={fadeIn(0.6)} className="flex flex-wrap gap-6 mt-4">
-                    <CVDownloader langue={langue}/>
+                    <CVDownloader langue={langue} />
                 </motion.div>
 
                 <motion.div variants={fadeIn(0.8)} className="flex gap-6 mt-6">

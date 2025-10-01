@@ -22,6 +22,20 @@ const projetsWebInitial = [
     ],
     lienCode: "https://github.com/tohaDEKENI/quiz_hub",
     lienDemo: "https://quiz-hub-xq76.vercel.app/"
+  },
+  {
+    id: 2,
+    titre: "Portfolio Personnel – Mon Portfolio Web",
+    titreEN: "Personal Portfolio – My Web Portfolio",
+    description: "Mon site portfolio personnel pour présenter mes projets et compétences en développement web. Construit avec Next.js et Tailwind CSS, entièrement responsive et interactif.",
+    descriptionEN: "My personal portfolio website showcasing my projects and web development skills. Built with Next.js and Tailwind CSS, fully responsive and interactive.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn/UI"],
+    images: [
+      "https://i.postimg.cc/HL1MkMxQ/Whats-App-Image-2025-10-01-08-03-47-e46476be.jpg",
+      "https://i.postimg.cc/K86Wc0Bk/screenshot-1759302678523.png"
+    ],
+    lienCode: "https://github.com/tohaDEKENI/my_portfolio",
+    lienDemo: "https://my-portfolio-liart-tau-47.vercel.app/",
   }
 ];
 
