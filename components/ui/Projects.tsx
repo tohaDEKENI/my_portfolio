@@ -36,6 +36,21 @@ const projetsWebInitial = [
     ],
     lienCode: "https://github.com/tohaDEKENI/my_portfolio",
     lienDemo: "https://my-portfolio-liart-tau-47.vercel.app/",
+  },
+  {
+    id:3,
+    titre:"e-commerce",
+    titreEN:"e-commerce",
+    description:"Site e‑commerce développé avec un système d’authentification sécurisé et un espace administrateur complet permettant la gestion des produits, des commandes et des utilisateurs. Le site offre une expérience utilisateur fluide et intuitive, permettant aux clients de parcourir les produits et de passer leurs commandes facilement, tout en donnant aux administrateurs un contrôle total sur la plateforme. Ce projet illustre mes compétences en développement web, gestion de bases de données et sécurité des applications.",
+    descriptionEN:"E‑commerce website developed with a secure authentication system and a full-featured admin panel for managing products, orders, and users. The site provides a smooth and intuitive user experience, allowing customers to browse products and place orders easily, while giving administrators complete control over the platform. This project demonstrates my skills in web development, database management, and application security.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "daysiUI"],
+    images:[
+      "https://i.postimg.cc/ryGW2Qhz/Capture-d-ecran-2025-12-01-000700.png",
+      "https://i.postimg.cc/xCBSsvzF/Capture-d-ecran-2025-12-01-001334.png",
+      "https://i.postimg.cc/yYzMkYyH/Capture-d-ecran-2025-12-01-001433.png"
+    ],
+    lienCode:"https://github.com/tohaDEKENI/zoski-ecommerce",
+    lienDemo:"https://faboutique.vercel.app/"
   }
 ];
 
