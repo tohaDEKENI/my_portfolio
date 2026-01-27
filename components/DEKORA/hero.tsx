@@ -31,7 +31,7 @@ const Hero = ({ scrollToSection }: Props) => {
                     <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-gray-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
                 </div>
 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32 sm:pt-40 md:pt-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                         {/* Texte */}
