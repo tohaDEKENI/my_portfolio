@@ -18,9 +18,9 @@ export async function POST(req: Request) {
       from: process.env.USER_EMAIL, // ton email obligatoire
       to: process.env.USER_EMAIL,   // tu reçois
       replyTo: email,               // si tu réponds → ça va vers le visiteur
-      subject: `DEMANDE DE SERVICE PAR ${name} ${lastname}`,
+      subject: `DEMANDE DE SERVICE PAR ${name} ${lastname ?? " - {client}"}`,
       text: `
-        Nom: ${name} ${lastname}
+        Nom: ${name} ${lastname ?? " - {client}"}
         Email: ${email}
         
         Message:

@@ -4,7 +4,7 @@ import {
     Mail,
     Phone,
     MapPin,
-
+    Sparkles 
 
 } from 'lucide-react';
 
@@ -25,11 +25,13 @@ type Props = {
     handleInputChange: (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => void;
-    handleSubmit:() => void,
-    formStatus:string
+    handleSubmit: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>,
+    formStatus: string,
+    loading: boolean
 }
 
-const Contacts = ({ formData, handleInputChange,handleSubmit,formStatus }: Props) => {
+const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loading }: Props) => {
+
     return (
         <>
             {/* Section Contact */}
@@ -165,7 +167,7 @@ const Contacts = ({ formData, handleInputChange,handleSubmit,formStatus }: Props
                                     <div className="mb-8">
                                         <h3 className="text-3xl font-bold text-black mb-3 flex items-center gap-3">
                                             <span>Envoyez un message</span>
-                                            <span className="text-2xl">✨</span>
+                                            <Sparkles className="w-6 h-6 " />
                                         </h3>
                                         <p className="text-gray-600 leading-relaxed">
                                             Racontez-nous votre projet. Plus vous êtes précis, plus nous pourrons vous aider efficacement.
@@ -248,11 +250,11 @@ const Contacts = ({ formData, handleInputChange,handleSubmit,formStatus }: Props
                                         {/* Bouton magique */}
                                         <Button
                                             onClick={handleSubmit}
-                                            disabled={formData.message.length < 20}
+                                            disabled={formData.message.length < 20 || loading}
                                             className="w-full bg-gradient-to-r from-black via-gray-800 to-black hover:from-gray-800 hover:via-black hover:to-gray-800 text-white py-7 text-lg font-bold rounded-2xl transition-all duration-500 hover:scale-105 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                         >
                                             <span className="relative z-10 flex items-center justify-center gap-3">
-                                                <span>Envoyer le message</span>
+                                                <span>{loading ? "Envoi en cours..." : "Envoyer le message"}</span>
                                                 <svg className="w-6 h-6 group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                                                 </svg>

@@ -1,47 +1,31 @@
 'use client';
-import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
+
 import {
-    Code,
-    Smartphone,
-    Palette,
-    Zap,
-    Mail,
-    Phone,
-    MapPin,
-    Menu,
-    X,
+
     ExternalLink,
-    Github, CreditCard, Users, BarChart2, ShoppingCart, Database, Edit, Monitor,
-
-    User,
-    Lightbulb,
-
+    Github, Sparkles
 } from 'lucide-react';
 
 import { LucideIcon } from "lucide-react";
 
 type Project = {
-  id: number;
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  gradient: string;
-  technologies: string[];
-  liveUrl: string;
-  githubUrl: string;
+    id: number;
+    title: string;
+    description: string;
+    icon: LucideIcon;
+    gradient: string;
+    technologies: string[];
+    liveUrl: string;
+    githubUrl: string;
 };
 
 type Props = {
-    projects:Project[];
-    scrollToSection:(sectionId: string) => void
+    projects: Project[];
+    scrollToSection: (sectionId: string) => void
 };
 
-const Projects = ({projects,scrollToSection}:Props) => {
+const Projects = ({ projects, scrollToSection }: Props) => {
     return (
         <>
             {/* Section Réalisations */}
@@ -64,7 +48,7 @@ const Projects = ({projects,scrollToSection}:Props) => {
                             Découvrez quelques-uns de nos projets récents et comment nous transformons les idées en solutions concrètes.
                         </p>
                         <p className="text-base text-gray-500 italic">
-                            ✨ Vous avez une idée ? Nous pouvons la réaliser sur mesure pour votre entreprise !
+                            <Sparkles className="w-6 h-6 " /> Vous avez une idée ? Nous pouvons la réaliser sur mesure pour votre entreprise !
                         </p>
                     </div>
 

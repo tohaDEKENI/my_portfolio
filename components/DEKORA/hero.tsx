@@ -53,7 +53,7 @@ const Hero = ({ scrollToSection }: Props) => {
                                 <Button
                                     onClick={() => scrollToSection('contact')}
                                     size="lg"
-                                    className="bg-black hover:bg-gray-800 hover:scale-105 text-white px-10 py-7 text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl rounded-lg"
+                                    className="bg-black cursor-pointer hover:bg-gray-800 hover:scale-105 text-white px-10 py-7 text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl rounded-lg"
                                 >
                                     Discutons de votre projet
                                 </Button>
@@ -61,8 +61,8 @@ const Hero = ({ scrollToSection }: Props) => {
                                 <Button
                                     onClick={() => scrollToSection('services')}
                                     size="lg"
-                                    variant="outline"
-                                    className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-7 text-lg font-semibold transition-all duration-300 rounded-lg"
+                                    variant= "ghost"
+                                    className="border-2 hover:bg-gray-100 cursor-pointer  border-black text-gray-700  hover:text-black px-10 py-7 text-lg font-semibold transition-all duration-300 rounded-lg"
                                 >
                                     Découvrir nos services
                                 </Button>
@@ -72,7 +72,7 @@ const Hero = ({ scrollToSection }: Props) => {
                             <div className="flex flex-wrap gap-8 justify-center lg:justify-start pt-8 animate-fade-in-up animation-delay-600">
                                 <StatCard number={50} suffix="+" label="Projets réalisés" />
                                 <StatCard number={98} suffix="%" label="Clients satisfaits" />
-                                <StatCard number={5} suffix="+" label="Années d'expérience" />
+                                <StatCard number={3} suffix="+" label="Années d'expérience" />
                             </div>
                         </div>
 
