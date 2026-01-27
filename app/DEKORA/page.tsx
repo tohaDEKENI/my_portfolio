@@ -20,16 +20,7 @@ import {
     Github, CreditCard, Users, BarChart2, ShoppingCart, Database, Edit, Monitor
 } from 'lucide-react';
 
-interface Project {
-    id: number;
-    title: string;
-    description: string;
-    icon: React.ComponentType<{ className?: string }>;
-    gradient: string;
-    technologies: string[];
-    liveUrl: string;
-    githubUrl: string;
-}
+
 
 export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
