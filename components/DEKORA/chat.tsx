@@ -72,7 +72,7 @@ export default function FloatingChat() {
                 // Désactiver le loading
                 setIsLoading(false);
 
-                // Ajouter la réponse de l'assistant
+                // Ajouter la réponse de l'assistant .
                 const botResponse: Message = {
                     id: messages.length + 2,
                     text: data.response,
