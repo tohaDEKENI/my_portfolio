@@ -124,7 +124,7 @@ export default function FloatingChat() {
                     </div>
                 </button>
             ) : (
-                <div className="bg-white border-2 border-black/40 rounded-md shadow-2xl w-96 overflow-hidden">
+                <div className="bg-white border-2 border-black/40 rounded-md shadow-2xl w-80 overflow-hidden">
                     {/* Header */}
                     <div className="flex items-center justify-between p-4 border-b-2 border-black bg-white">
                         <div className="flex items-center gap-2">
