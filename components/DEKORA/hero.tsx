@@ -130,7 +130,7 @@ const StatCard = ({ number, suffix, label }: Props1) => {
                 {inView && (
                     <CountUp
                         end={number}
-                        duration={7}
+                        duration={20}
                         suffix={suffix}
                         enableScrollSpy={false}
                     />

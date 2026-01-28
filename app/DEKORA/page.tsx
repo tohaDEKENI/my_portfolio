@@ -23,6 +23,7 @@ import Solutions from '@/components/DEKORA/solutions';
 import About from '@/components/DEKORA/about';
 import Hero from '@/components/DEKORA/hero';
 import Header from '@/components/DEKORA/header';
+import FloatingChat from '@/components/DEKORA/chat';
 
 
 type FormData = {
@@ -267,6 +268,8 @@ export default function Home() {
         }
     }
 `}</style>
+      <FloatingChat />
+
       <Hero scrollToSection={scrollToSection} />
 
       <About scrollToSection={scrollToSection} />
